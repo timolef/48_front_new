@@ -36,16 +36,20 @@ const handleLogout = () => {
         <div class="border-t border-slate-100 pt-6 space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="bg-slate-50 p-4 rounded-lg">
-              <span class="block text-sm text-slate-500">Division</span>
-              <span class="font-medium text-slate-900">{{ user.division || 'Non renseignée' }}</span>
+              <span class="block text-sm text-slate-500">Prénom & Nom</span>
+              <span class="font-medium text-slate-900 capitalize">{{ user.firstname }} {{ user.lastname }}</span>
             </div>
             <div class="bg-slate-50 p-4 rounded-lg">
-              <span class="block text-sm text-slate-500">Ville</span>
-              <span class="font-medium text-slate-900">{{ user.city || 'Non renseignée' }}</span>
+              <span class="block text-sm text-slate-500">Pseudo</span>
+              <span class="font-medium text-slate-900">{{ user.username }}</span>
             </div>
             <div class="bg-slate-50 p-4 rounded-lg">
-              <span class="block text-sm text-slate-500">Téléphone</span>
-              <span class="font-medium text-slate-900">{{ user.phone || 'Non renseigné' }}</span>
+              <span class="block text-sm text-slate-500">Date de naissance</span>
+              <span class="font-medium text-slate-900">{{ user.birthdate ? new Date(user.birthdate).toLocaleDateString() : 'Non renseignée' }}</span>
+            </div>
+             <div class="bg-slate-50 p-4 rounded-lg">
+              <span class="block text-sm text-slate-500">Genre</span>
+              <span class="font-medium text-slate-900 capitalize">{{ user.gender || 'Non renseigné' }}</span>
             </div>
           </div>
         </div>
