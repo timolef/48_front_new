@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  /* Legacy App Defaults */
+  background-color: #aedbdd;
+  /* Legacy Blue Background */
+  color: #2c3e50;
+  /* Legacy Text Color */
+}
+
+body {
+  margin: 0;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
