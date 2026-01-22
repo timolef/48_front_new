@@ -77,15 +77,15 @@ const tabs = [
       
       <!-- Tabs Navigation -->
       <div class="flex justify-center mb-12">
-        <div class="inline-flex bg-white rounded-full p-1 shadow-sm border border-slate-200">
+        <div class="inline-flex bg-slate-50/80 backdrop-blur-sm rounded-full p-1.5 shadow-sm border border-slate-200">
           <button 
             v-for="tab in tabs" 
             :key="tab.id"
             @click="activeTab = tab.id"
-            class="px-8 py-3 rounded-full text-base font-semibold focus:outline-none transition-all duration-300"
+            class="px-8 py-3 rounded-full text-base font-bold focus:outline-none transition-all duration-300 transform"
             :class="activeTab === tab.id 
-              ? 'bg-[#26AAAF] text-white shadow-md' 
-              : 'text-slate-500 hover:text-[#26AAAF] hover:bg-slate-50'"
+              ? 'bg-[#26AAAF] text-white shadow-md scale-105' 
+              : 'text-slate-500 hover:text-[#26AAAF] hover:bg-white'"
           >
             {{ tab.title }}
           </button>

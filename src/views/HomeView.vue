@@ -13,14 +13,14 @@ import BaseButton from '../components/base/BaseButton.vue';
       <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light italic">
         "Mettre des mots sur les maux !"
       </p>
-      <div class="flex justify-center gap-4">
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="https://www.helloasso.com/associations/association-48-pour-100/formulaires/1" target="_blank" rel="noopener noreferrer">
-          <BaseButton variant="primary" class="px-8 py-3 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+          <BaseButton variant="primary" class="w-full sm:w-auto px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1">
             Faire un don
           </BaseButton>
         </a>
         <a href="https://form.dragnsurvey.com/survey/r/0d2527c9" target="_blank" rel="noopener noreferrer">
-          <BaseButton variant="secondary" class="px-8 py-3 text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all">
+          <BaseButton variant="secondary" class="w-full sm:w-auto px-8 py-4 text-lg font-bold shadow-md hover:shadow-xl hover:-translate-y-1">
             Rejoignez-nous
           </BaseButton>
         </a>

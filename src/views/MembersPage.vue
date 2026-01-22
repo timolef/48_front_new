@@ -70,11 +70,11 @@ const openMemberDetails = (member) => {
         <div 
           v-for="member in members.filter(m => m.groupe === category.id)" 
           :key="member.id"
-          class="bg-white rounded-[15px] pt-4 h-[250px] w-[270px] text-center flex flex-col items-center shadow-[0_6px_14px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:-translate-y-3 transition-all duration-300 cursor-pointer overflow-hidden group border border-slate-100"
+          class="bg-white rounded-2xl pt-4 h-[250px] w-[270px] text-center flex flex-col items-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden group border border-slate-100"
           @click="openMemberDetails(member)"
         >
           <!-- Image Container with Grayscale Effect that removes on Hover -->
-          <div class="h-[120px] w-[120px] rounded-full shadow-lg mt-4 mx-auto overflow-hidden transition-all duration-300 group-hover:scale-110 ring-4 ring-transparent group-hover:ring-legacy-yellow">
+          <div class="h-[120px] w-[120px] rounded-full shadow-md mt-4 mx-auto overflow-hidden transition-all duration-300 group-hover:scale-105 ring-4 ring-slate-50 group-hover:ring-legacy-yellow">
              <img 
                :src="getImageUrl(member.photo)" 
                :alt="member.name"
@@ -82,8 +82,8 @@ const openMemberDetails = (member) => {
              />
           </div>
           
-          <h3 class="text-[1.4em] font-bold text-[#333] mt-4 mb-0 group-hover:text-legacy-teal transition-colors">{{ member.name }}</h3>
-          <p class="text-[1.1em] text-[#666] mb-4">{{ member.role }}</p>
+          <h3 class="text-xl font-bold text-slate-800 mt-4 mb-1 group-hover:text-legacy-teal transition-colors">{{ member.name }}</h3>
+          <p class="text-sm font-medium text-slate-500 mb-4">{{ member.role }}</p>
         </div>
       </div>
     </div>

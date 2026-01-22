@@ -13,24 +13,24 @@ defineProps({
 
 <template>
   <div 
-    class="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden transition-shadow duration-200"
-    :class="{ 'hover:shadow-lg transition-transform hover:-translate-y-1': hoverable }"
+    class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-all duration-300 ease-in-out"
+    :class="{ 'hover:shadow-xl hover:-translate-y-1 hover:border-slate-200': hoverable }"
   >
     <!-- Header -->
-    <div v-if="title || $slots.header" class="px-6 py-4 border-b border-slate-100 bg-slate-50">
-      <h3 v-if="title" class="text-lg font-semibold text-slate-800">
+    <div v-if="title || $slots.header" class="px-8 py-6 border-b border-slate-50 bg-gradient-to-r from-slate-50 to-white">
+      <h3 v-if="title" class="text-xl font-bold text-slate-800 tracking-tight">
         {{ title }}
       </h3>
       <slot name="header" v-else></slot>
     </div>
 
     <!-- Body -->
-    <div class="px-6 py-4 text-slate-600">
+    <div class="px-8 py-6 text-slate-600 leading-relaxed">
       <slot></slot>
     </div>
 
     <!-- Footer -->
-    <div v-if="$slots.footer" class="px-6 py-4 bg-slate-50 border-t border-slate-100">
+    <div v-if="$slots.footer" class="px-8 py-4 bg-slate-50/50 border-t border-slate-50">
       <slot name="footer"></slot>
     </div>
   </div>

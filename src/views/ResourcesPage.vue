@@ -157,15 +157,15 @@ const getIconForType = (type) => {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Main Tabs -->
-      <div class="flex flex-col md:flex-row justify-center mb-10 space-y-4 md:space-y-0 md:space-x-4">
+      <div class="flex flex-col md:flex-row justify-center mb-12 space-y-4 md:space-y-0 md:space-x-2 bg-slate-50/50 p-2 rounded-3xl inline-flex flex-wrap md:flex-nowrap mx-auto border border-slate-100">
         <button 
           v-for="tab in tabs" 
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-sm border"
+          class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide transition-all duration-300"
           :class="activeTab === tab.id 
-            ? 'bg-legacy-teal text-white border-legacy-teal shadow-md transform scale-105' 
-            : 'bg-white text-slate-500 border-slate-200 hover:border-legacy-teal hover:text-legacy-teal'"
+            ? 'bg-legacy-teal text-white shadow-lg transform scale-105' 
+            : 'text-slate-500 hover:bg-white hover:text-legacy-teal hover:shadow-sm'"
         >
           {{ tab.label }}
         </button>

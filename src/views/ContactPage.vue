@@ -128,23 +128,23 @@ const sendMessage = async () => {
         <h2 class="text-2xl font-bold text-slate-800 mb-4">Suivez-nous</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
           
-          <a href="https://www.facebook.com/association48pour100" target="_blank" class="flex items-center p-4 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-blue-600 transition-colors group">
-            <svg class="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+          <a href="https://www.facebook.com/association48pour100" target="_blank" class="flex items-center p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-blue-600 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+            <svg class="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/>
             </svg>
-            <span class="ml-3 font-medium text-slate-700">Facebook</span>
+            <span class="ml-3 font-bold text-slate-700 group-hover:text-blue-600 transition-colors">Facebook</span>
           </a>
 
-          <a href="https://www.instagram.com/association48pour100?igsh=MWVicGJsZnM5OHRodQ==" target="_blank" class="flex items-center p-4 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-pink-600 transition-colors group">
-            <svg class="h-8 w-8 text-pink-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+          <a href="https://www.instagram.com/association48pour100?igsh=MWVicGJsZnM5OHRodQ==" target="_blank" class="flex items-center p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-pink-600 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+            <svg class="h-8 w-8 text-pink-600 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/>
             </svg>
-            <span class="ml-3 font-medium text-slate-700">Instagram</span>
+            <span class="ml-3 font-bold text-slate-700 group-hover:text-pink-600 transition-colors">Instagram</span>
           </a>
 
-          <a href="https://www.tiktok.com/@association48pour?_t=8hk1kncggkd&_r=1" target="_blank" class="flex items-center p-4 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-[#00f2ea] transition-colors group">
-            <TikTokIcon class="h-8 w-8 text-slate-800 group-hover:text-[#00f2ea] transition-colors group-hover:scale-110 transform" />
-            <span class="ml-3 font-medium text-slate-700">TikTok</span>
+          <a href="https://www.tiktok.com/@association48pour?_t=8hk1kncggkd&_r=1" target="_blank" class="flex items-center p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#00f2ea] hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+            <TikTokIcon class="h-8 w-8 text-slate-800 group-hover:text-[#00f2ea] transition-colors group-hover:scale-110 transform duration-300" />
+            <span class="ml-3 font-bold text-slate-700 group-hover:text-[#00f2ea] transition-colors">TikTok</span>
           </a>
 
         </div>

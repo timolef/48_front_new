@@ -96,63 +96,71 @@ const shortenText = (text) => {
         Suivez les dernières actions, événements et annonces officielles de l'association.
       </p>
       
-      <!-- Admin Create Button in Hero -->
-       <button 
-        v-if="isAdmin" 
-        @click="openCreateModal"
-        class="bg-[#26AAAF] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-[#1d8c91] transition-all transform hover:-translate-y-1 font-bold uppercase tracking-wide text-sm"
-      >
-        + Créer une publication
-      </button>
+      <div class="flex justify-center">
+        <BaseButton 
+          v-if="isAdmin" 
+          @click="openCreateModal"
+          variant="primary"
+          class="shadow-lg hover:shadow-xl hover:-translate-y-1 font-bold uppercase tracking-wide text-sm px-8 py-3"
+        >
+          + Créer une publication
+        </BaseButton>
+      </div>
     </div>
 
     <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div v-if="loading" class="text-center py-12 text-slate-500">
-        Chargement...
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div v-if="loading" class="text-center py-20">
+         <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-legacy-teal"></div>
+         <p class="mt-4 text-slate-500 font-medium">Chargement des actualités...</p>
       </div>
 
-      <div v-else-if="error" class="bg-red-50 text-red-600 p-4 rounded-lg text-center">
+      <div v-else-if="error" class="max-w-2xl mx-auto bg-red-50 text-red-600 p-6 rounded-2xl text-center border border-red-100">
         {{ error }}
       </div>
 
-    <div v-else class="space-y-4">
-      <!-- Using grid layout but cards full width to match legacy list style potentially, or keeping grid if better. 
-           Legacy used v-row/v-col, implying vertical list often or grid. Let's stick onto legacy card style. -->
-      <div v-for="post in posts" :key="post.id" class="w-full">
-         <BaseCard :title="post.title" hoverable>
-            <div class="text-slate-600 whitespace-pre-line mb-4">
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div v-for="post in posts" :key="post.id" class="flex">
+         <BaseCard :title="post.title" hoverable class="w-full flex flex-col h-full">
+            <div class="text-slate-600 whitespace-pre-line mb-6 flex-grow leading-relaxed">
                {{ shortenText(post.content) }}
             </div>
             
             <template #footer>
-              <div class="flex items-center justify-end text-sm text-gray-500">
+              <div class="flex items-center justify-between pt-2 border-t border-slate-50">
                  <!-- Actions -->
-                 <div class="flex items-center space-x-2 mr-auto">
-                   <button class="p-2 text-gray-400 hover:bg-gray-100 rounded-full cursor-default">
-                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                 <div class="flex items-center space-x-2">
+                   <button class="p-2 text-slate-400 hover:bg-slate-50 rounded-full transition-colors" title="J'aime">
+                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                    </button>
                    
                    <template v-if="isAdmin">
-                      <button @click="openEditModal(post)" class="p-2 text-blue-500 hover:bg-blue-50 rounded-full transition-colors">
-                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                      <button @click="openEditModal(post)" class="p-2 text-blue-500 hover:bg-blue-50 rounded-full transition-colors" title="Modifier">
+                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                       </button>
-                      <button @click="deletePost(post.id)" class="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors">
-                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                      <button @click="deletePost(post.id)" class="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors" title="Supprimer">
+                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                       </button>
                    </template>
                  </div>
                  
-                 <span>{{ formatDate(post.created_at || new Date()) }}</span>
+                 <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">{{ formatDate(post.created_at || new Date()) }}</span>
               </div>
             </template>
          </BaseCard>
       </div>
     </div>
     
-    <div v-if="!loading && posts.length === 0" class="text-center">
-       <div class="bg-white rounded shadow p-4 text-gray-500">
-         Il n'y a pas de posts d'actualités
+    <div v-if="!loading && posts.length === 0" class="text-center py-20">
+       <div class="bg-slate-50 rounded-2xl p-8 max-w-md mx-auto border border-slate-100">
+         <svg class="mx-auto h-12 w-12 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+         </svg>
+         <h3 class="mt-2 text-sm font-medium text-slate-900">Aucune actualité</h3>
+         <p class="mt-1 text-sm text-slate-500">Soyez le premier à poster quelque chose !</p>
+         <div class="mt-6" v-if="isAdmin">
+           <BaseButton variant="primary" size="sm" @click="openCreateModal">+ Nouvelle actu</BaseButton>
+         </div>
        </div>
     </div>
 

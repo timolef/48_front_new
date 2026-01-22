@@ -22,13 +22,13 @@ const props = defineProps({
 });
 
 const classes = computed(() => {
-  const base = 'inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
+  const base = 'inline-flex items-center justify-center px-6 py-3 text-sm font-bold rounded-full focus:outline-none focus:ring-4 focus:ring-opacity-50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md';
   
   const variants = {
-    primary: 'bg-[#26AAAF] text-white hover:bg-[#1d8c91] focus:ring-[#26AAAF] border border-transparent',
-    secondary: 'bg-[#FEF598] text-slate-800 hover:bg-[#fcf27c] focus:ring-[#FEF598] border border-transparent',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
-    text: 'bg-transparent text-slate-600 hover:bg-slate-100 focus:ring-slate-300'
+    primary: 'bg-[#26AAAF] text-white hover:bg-[#219599] focus:ring-teal-200 border border-transparent',
+    secondary: 'bg-[#FEF598] text-slate-800 hover:bg-[#fcf27c] focus:ring-yellow-100 border border-transparent',
+    danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-200',
+    text: 'bg-transparent text-slate-600 hover:bg-slate-50 focus:ring-slate-200 shadow-none hover:shadow-none'
   };
 
   const width = props.block ? 'w-full' : '';
@@ -43,6 +43,7 @@ const classes = computed(() => {
     :class="classes"
     :disabled="disabled"
     @click="$emit('click', $event)"
+    class="active:scale-95 transform transition-transform"
   >
     <slot></slot>
   </button>

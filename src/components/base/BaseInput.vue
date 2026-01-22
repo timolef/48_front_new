@@ -48,8 +48,8 @@ defineEmits(['update:modelValue']);
         :type="type"
         :value="modelValue"
         :placeholder="placeholder"
-        class="block w-full px-3 py-2 bg-white text-slate-900 border border-slate-400 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#26AAAF] focus:border-[#26AAAF] sm:text-sm transition duration-150 ease-in-out"
-        :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': error }"
+        class="block w-full px-4 py-3 bg-white text-slate-900 border border-slate-300 rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#26AAAF]/20 focus:border-[#26AAAF] sm:text-sm transition duration-200 ease-in-out"
+        :class="{ 'border-red-500 focus:ring-red-500/20 focus:border-red-500': error }"
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
