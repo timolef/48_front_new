@@ -16,9 +16,9 @@ const handleLogout = () => {
 const navLinks = [
   { name: 'Accueil', path: '/' },
   { name: 'à propos', path: '/about' },
-  { name: 'Publications', path: '/news' },
-  { name: 'Nos membres', path: '/members' },
   { name: 'Ressources', path: '/ressources' },
+  { name: 'Nos membres', path: '/members' },
+  { name: 'Publications', path: '/news' },
   { name: 'Nous contacter', path: '/contact' },
 ];
 </script>
@@ -29,28 +29,26 @@ const navLinks = [
       <div class="flex justify-between items-center h-full">
         <!-- Logo & Brand -->
         <div class="flex items-center">
-          <div class="flex-shrink-0 flex items-center justify-center mr-8">
-            <!-- Placeholder for logo if exists, matching legacy padding/style -->
-            <img class="h-[45px] w-auto" src="../assets/logo.png" alt="Logo" onError="this.style.display='none'"/>
-            <span class="ml-2 text-white font-medium text-xl md:hidden lg:block">Association 48 pour 100</span>
+          <div class="flex-shrink-0 flex items-center justify-center mr-8 group cursor-pointer" @click="router.push('/')">
+            <img class="h-[50px] w-auto transform transition-transform duration-300 group-hover:scale-110" src="../assets/logo.png" alt="Logo" onError="this.style.display='none'"/>
           </div>
           
           <!-- Desktop Nav -->
-          <div class="hidden md:flex space-x-1">
-            <router-link 
-              v-for="link in navLinks" 
-              :key="link.path" 
-              :to="link.path"
-              class="px-4 py-2 text-white text-base font-medium uppercase tracking-wide hover:bg-white/10 rounded transition-colors"
-              active-class="bg-white/20"
-            >
-              {{ link.name }}
-            </router-link>
+          <div class="hidden md:flex space-x-8">
+            <template v-for="link in navLinks" :key="link.path">
+              <router-link 
+                :to="link.path"
+                class="px-2 py-2 text-white/90 text-[12px] font-bold uppercase tracking-widest transition-all duration-300 hover:text-white transform hover:scale-105"
+                active-class="!text-legacy-yellow scale-105"
+              >
+                {{ link.name }}
+              </router-link>
+            </template>
             <router-link 
               v-if="isAdmin" 
               to="/admin" 
-              class="px-4 py-2 text-white text-base font-medium uppercase tracking-wide hover:bg-white/10 rounded transition-colors"
-              active-class="bg-white/20"
+              class="px-4 py-2 ml-4 text-legacy-yellow text-[12px] font-bold uppercase tracking-widest border-2 border-legacy-yellow rounded-full hover:bg-legacy-yellow hover:text-[#26AAAF] transition-all duration-300"
+              active-class="bg-legacy-yellow !text-[#26AAAF]"
             >
               Admin
             </router-link>

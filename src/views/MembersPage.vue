@@ -14,26 +14,52 @@ const categories = [
   { id: 'Présidence', name: 'Présidence' },
   { id: 'Administration', name: 'Administration' },
   { id: 'Pôle communication', name: 'Pôle communication' },
-  { id: 'Pôle partenariats', name: 'Pôle partenariats' },
-  { id: 'Pôle interventions', name: 'Pôle interventions' },
   { id: 'Pôle podcasts', name: 'Pôle podcasts' },
-  { id: 'Pôle site web', name: 'Pôle site web' }
+  { id: 'Pôle interventions', name: 'Pôle interventions' }
 ];
 
 const members = [
+  // Présidence
   { id: 1, name: 'Ambre', role: 'Présidente', groupe: 'Présidence', photo: 'ambre.jpg', desc: 'Visionnaire et leader inspirante, Ambre supervise les activités globales tout en veillant à la bonne cohésion de l\'équipe.' },
-  { id: 2, name: 'Zoe', role: 'Vice-présidente', groupe: 'Présidence', photo: 'zoe.jpg', desc: 'Soutenant la présidente, Zoe se charge de superviser les initiatives stratégiques et de renforcer les collaborations internes.' },
-  { id: 3, name: 'Maxence', role: 'Secrétaire général', groupe: 'Administration', photo: 'maxence.jpg', desc: 'Maxence est chargé de l’organisation administrative et assure une documentation impeccable des projets.' },
-  { id: 4, name: 'Valentine', role: 'Co-secrétaire général', groupe: 'Administration', photo: 'valentine.jpg', desc: 'Valentine soutient les tâches administratives en coordonnant les efforts avec rigueur et professionnalisme.' },
-  { id: 5, name: 'Mathilde', role: 'Trésorière', groupe: 'Administration', photo: 'mathilde.jpg', desc: 'Gardienne des finances, Mathilde gère le budget et assure la transparence financière de toutes les opérations.' },
-  { id: 6, name: 'Eglantine', role: 'Responsable communication', groupe: 'Pôle communication', photo: 'eglantine.jpg', desc: 'Églantine supervise les stratégies de communication pour donner de la visibilité aux projets de l’organisation.' },
-  { id: 7, name: 'Romane', role: 'Responsable communication', groupe: 'Pôle communication', photo: 'romane.jpg', desc: 'Romane travaille sur des campagnes percutantes, garantissant une image cohérente et dynamique.' },
-  { id: 8, name: 'Timothée F.', role: 'Responsable partenariat', groupe: 'Pôle partenariats', photo: 'timotheef.jpg', desc: 'Spécialiste des relations externes, Timothée F. établit et entretient des collaborations avec des partenaires clés.' },
-  { id: 9, name: 'Quitterie', role: 'Responsable interventions', groupe: 'Pôle interventions', photo: 'quitterie.jpg', desc: 'Quitterie coordonne les initiatives terrain pour assurer un impact direct et mesurable.' },
-  { id: 10, name: 'Nicolas', role: 'Responsable podcast', groupe: 'Pôle podcasts', photo: 'nicolas.jpg', desc: 'Nicolas dirige la création et la diffusion de podcasts captivants qui amplifient la voix de l’organisation.' },
-  { id: 11, name: 'Maxence', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'maxence.jpg', desc: 'Maxence contribue à la production des podcasts en apportant créativité et expertise technique.' },
-  { id: 12, name: 'Maissa', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'maissa.jpg', desc: 'Maïssa participe à la préparation des contenus audio, offrant des perspectives originales et enrichissantes.' },
-  { id: 13, name: 'Timothée L.', role: 'Responsable site web', groupe: 'Pôle site web', photo: 'timotheel.jpg', desc: 'En charge du site, Timothée L. optimise la plateforme pour une navigation fluide et une mise en valeur des projets.' }
+  { id: 2, name: 'Zoé', role: 'Vice présidente', groupe: 'Présidence', photo: 'zoe.jpg', desc: 'Soutenant la présidente, Zoé se charge de superviser les initiatives stratégiques et de renforcer les collaborations internes.' },
+
+  // Administration
+  { id: 3, name: 'Maxence', role: 'Secrétaire Général', groupe: 'Administration', photo: 'maxence.jpg', desc: 'Maxence est chargé de l’organisation administrative et assure une documentation impeccable des projets.' },
+  { id: 4, name: 'Mathilde', role: 'Trésorière', groupe: 'Administration', photo: 'mathilde.jpg', desc: 'Gardienne des finances, Mathilde gère le budget et assure la transparence financière de toutes les opérations.' },
+
+  // Pôle communication
+  { id: 5, name: 'Ludivine', role: 'Responsable pôle comm', groupe: 'Pôle communication', photo: 'ludivine.jpg', desc: 'Ludivine pilote la stratégie de communication avec créativité et rigueur.' },
+  { id: 6, name: 'Églantine', role: 'Membre communication', groupe: 'Pôle communication', photo: 'eglantine.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 7, name: 'Jade', role: 'Membre communication', groupe: 'Pôle communication', photo: 'jade.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 8, name: 'Léa', role: 'Membre communication', groupe: 'Pôle communication', photo: 'lea_comm.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 9, name: 'Lou', role: 'Membre communication', groupe: 'Pôle communication', photo: 'lou.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 10, name: 'Nour', role: 'Membre communication', groupe: 'Pôle communication', photo: 'nour.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 11, name: 'Romane', role: 'Membre communication', groupe: 'Pôle communication', photo: 'romane.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 12, name: 'Safaa', role: 'Membre communication', groupe: 'Pôle communication', photo: 'safaa.jpg', desc: 'Membre active du pôle communication.' },
+  { id: 13, name: 'Timothée', role: 'Membre communication', groupe: 'Pôle communication', photo: 'timothee.jpg', desc: 'Membre actif du pôle communication.' },
+
+  // Pôle podcasts
+  { id: 14, name: 'Nicolas', role: 'Responsable pôle podcast', groupe: 'Pôle podcasts', photo: 'nicolas.jpg', desc: 'Nicolas dirige la création et la diffusion de podcasts captivants.' },
+  { id: 15, name: 'Anaëlle', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'anaelle.jpg', desc: 'Membre active du pôle podcast.' },
+  { id: 16, name: 'Clémentine', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'clementine.jpg', desc: 'Membre active du pôle podcast.' },
+  { id: 17, name: 'Juliette', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'juliette.jpg', desc: 'Membre active du pôle podcast.' },
+  { id: 18, name: 'Lorenzo', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'lorenzo.jpg', desc: 'Membre actif du pôle podcast.' },
+  { id: 19, name: 'Léa', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'lea_pod.jpg', desc: 'Membre active du pôle podcast.' },
+  { id: 20, name: 'Maïssa', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'maissa.jpg', desc: 'Membre active du pôle podcast.' },
+  { id: 21, name: 'Maxence', role: 'Membre podcast', groupe: 'Pôle podcasts', photo: 'maxence.jpg', desc: 'Membre actif du pôle podcast.' },
+
+  // Pôle interventions
+  { id: 22, name: 'Quitterie', role: 'Responsable pôle intervention', groupe: 'Pôle interventions', photo: 'quitterie.jpg', desc: 'Quitterie coordonne les initiatives terrain pour assurer un impact direct.' },
+  { id: 23, name: 'Alexandre', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'alexandre.jpg', desc: 'Membre actif du pôle intervention.' },
+  { id: 24, name: 'Anaëlle', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'anaelle.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 25, name: 'Émilie', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'emilie.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 26, name: 'Juliette', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'juliette.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 27, name: 'Léa', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'lea_inter1.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 28, name: 'Léa', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'lea_inter2.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 29, name: 'Lorenzo', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'lorenzo.jpg', desc: 'Membre actif du pôle intervention.' },
+  { id: 30, name: 'Ophélie', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'ophelie.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 31, name: 'Polina', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'polina.jpg', desc: 'Membre active du pôle intervention.' },
+  { id: 32, name: 'Safaa', role: 'Membre intervention', groupe: 'Pôle interventions', photo: 'safaa.jpg', desc: 'Membre active du pôle intervention.' }
 ];
 
 const selectedMember = ref(null);
