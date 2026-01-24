@@ -31,7 +31,18 @@ const fetchPosts = async () => {
   }
 };
 
-onMounted(fetchPosts);
+onMounted(() => {
+  fetchPosts();
+  // Load Elfsight Platform
+  const scriptId = 'elfsight-platform-script';
+  if (!document.getElementById(scriptId)) {
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    script.id = scriptId;
+    document.body.appendChild(script);
+  }
+});
 
 const openCreateModal = () => {
   editingId.value = null;
@@ -165,6 +176,31 @@ const shortenText = (text) => {
     </div>
 
     </div>
+
+    <!-- Instagram Feed Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4">
+          SUIVEZ-NOUS SUR <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">INSTAGRAM</span>
+        </h2>
+        <p class="text-lg text-slate-600">
+          Retrouvez nos dernières stories et publications en direct.
+        </p>
+      </div>
+
+      <!-- Widget Container -->
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden relative min-h-[400px] flex items-center justify-center">
+        
+        <!-- Placeholder / Fallback Content -->
+        <!-- Replace this comment block with your Widget Code from SnapWidget or Elfsight -->
+        <!-- Example: <script src="..."></script> <iframe ...></iframe> -->
+        
+        <div class="elfsight-app-b529be7b-8605-4e39-9425-29517ff4de54" data-elfsight-app-lazy></div>
+
+      </div>
+    </div>
+
+
 
     <!-- Edit/Create Modal -->
     <BaseModal 

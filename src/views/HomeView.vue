@@ -13,6 +13,9 @@ import BaseButton from '../components/base/BaseButton.vue';
       <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light italic">
         "Mettre des mots sur les maux !"
       </p>
+      <p class="text-base md:text-lg text-slate-500 max-w-xl mx-auto mb-10 font-medium italic">
+        "48% des personnes harcelées à l'école n'en parlent jamais, libérons la parole"
+      </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="https://www.helloasso.com/associations/association-48-pour-100/formulaires/1" target="_blank" rel="noopener noreferrer">
           <BaseButton variant="primary" class="w-full sm:w-auto px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1">
